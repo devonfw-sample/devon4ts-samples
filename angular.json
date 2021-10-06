@@ -19,10 +19,13 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "apps/angular-basic-pwa/src/favicon.ico",
-              "apps/angular-basic-pwa/src/assets"
+              "apps/angular-basic-pwa/src/assets",
+              "apps/angular-basic-pwa/src/manifest.webmanifest"
             ],
             "styles": ["apps/angular-basic-pwa/src/styles.scss"],
-            "scripts": []
+            "scripts": [],
+            "serviceWorker": true,
+            "ngswConfigPath": "apps/angular-basic-pwa/ngsw-config.json"
           },
           "configurations": {
             "production": {

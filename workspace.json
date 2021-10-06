@@ -72,6 +72,16 @@
           },
           "defaultConfiguration": "development"
         },
+        "serve-pwa": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "nx run angular-basic-pwa:build:production",
+              "npx serve dist/apps/angular-basic-pwa/"
+            ],
+            "parallel": false
+          }
+        },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {

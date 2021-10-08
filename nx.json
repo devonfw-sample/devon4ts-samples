@@ -33,6 +33,16 @@
     "angular-basic-pwa-e2e": {
       "tags": [],
       "implicitDependencies": ["angular-basic-pwa"]
+    },
+    "angular-material-basic-layout": {
+      "tags": []
+    },
+    "angular-material-basic-layout-e2e": {
+      "tags": [],
+      "implicitDependencies": ["angular-material-basic-layout"]
+    },
+    "material": {
+      "tags": []
     }
   }
 }

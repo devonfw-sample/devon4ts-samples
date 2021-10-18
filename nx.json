@@ -40,9 +40,6 @@
     "angular-material-basic-layout-e2e": {
       "tags": [],
       "implicitDependencies": ["angular-material-basic-layout"]
-    },
-    "material": {
-      "tags": []
     }
   }
 }

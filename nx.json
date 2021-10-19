@@ -47,6 +47,9 @@
     "angular-material-theming-e2e": {
       "tags": [],
       "implicitDependencies": ["angular-material-theming"]
+    },
+    "shared-components": {
+      "tags": []
     }
   }
 }

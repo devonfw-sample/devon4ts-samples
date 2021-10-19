@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Pages } from 'libs/shared-components/src/lib/basic-layout/basic-layout.model';
 
 @Component({
   selector: 'devon4ts-samples-root',
@@ -7,4 +8,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-material-basic-layout';
+  pages: Pages[] = [
+    {
+      id: 'home',
+      routeUrl: './',
+      icon: 'home',
+      pageTitle: 'Home',
+      pageSubTitle: 'sample home page',
+    },
+    {
+      id: 'sampleData',
+      routeUrl: './data',
+      icon: 'grid_on',
+      pageTitle: 'Data',
+      pageSubTitle: 'sample data page',
+    },
+  ];
 }

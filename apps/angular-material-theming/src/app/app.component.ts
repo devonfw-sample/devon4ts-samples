@@ -14,14 +14,14 @@ export class AppComponent {
       routeUrl: './',
       icon: 'home',
       pageTitle: 'Home',
-      pageSubTitle: 'sample home page'
+      pageSubTitle: 'sample home page',
     },
     {
       id: 'sampleData',
       routeUrl: './data',
       icon: 'grid_on',
       pageTitle: 'Data',
-      pageSubTitle: 'sample data page'
-    }
-  ]
+      pageSubTitle: 'sample data page',
+    },
+  ];
 }

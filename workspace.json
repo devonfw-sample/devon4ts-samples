@@ -254,6 +254,152 @@
           }
         }
       }
+    },
+    "angular-material-theming": {
+      "projectType": "application",
+      "root": "apps/angular-material-theming",
+      "sourceRoot": "apps/angular-material-theming/src",
+      "prefix": "devon4ts-samples",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/angular-material-theming",
+            "index": "apps/angular-material-theming/src/index.html",
+            "main": "apps/angular-material-theming/src/main.ts",
+            "polyfills": "apps/angular-material-theming/src/polyfills.ts",
+            "tsConfig": "apps/angular-material-theming/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/angular-material-theming/src/favicon.ico",
+              "apps/angular-material-theming/src/assets"
+            ],
+            "styles": ["apps/angular-material-theming/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/angular-material-theming/src/environments/environment.ts",
+                  "with": "apps/angular-material-theming/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "angular-material-theming:build:production"
+            },
+            "development": {
+              "browserTarget": "angular-material-theming:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "angular-material-theming:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/angular-material-theming/src/**/*.ts",
+              "apps/angular-material-theming/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/angular-material-theming"],
+          "options": {
+            "jestConfig": "apps/angular-material-theming/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "angular-material-theming-e2e": {
+      "root": "apps/angular-material-theming-e2e",
+      "sourceRoot": "apps/angular-material-theming-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/angular-material-theming-e2e/cypress.json",
+            "devServerTarget": "angular-material-theming:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "angular-material-theming:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": [
+              "apps/angular-material-theming-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    },
+    "shared-components": {
+      "projectType": "library",
+      "root": "libs/shared-components",
+      "sourceRoot": "libs/shared-components/src",
+      "prefix": "devon4ts-samples",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared-components"],
+          "options": {
+            "jestConfig": "libs/shared-components/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared-components/src/**/*.ts",
+              "libs/shared-components/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

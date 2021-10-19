@@ -7,7 +7,7 @@ import { Pages } from 'libs/shared-components/src/lib/basic-layout/basic-layout.
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'angular-material-basic-layout';
+  title = 'angular-material-theming';
   pages: Pages[] = [
     {
       id: 'home',

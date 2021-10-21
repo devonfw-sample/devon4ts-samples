@@ -134,6 +134,125 @@
         }
       }
     },
+    "angular-error-handler": {
+      "projectType": "application",
+      "root": "apps/angular-error-handler",
+      "sourceRoot": "apps/angular-error-handler/src",
+      "prefix": "devon4ts-samples",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/angular-error-handler",
+            "index": "apps/angular-error-handler/src/index.html",
+            "main": "apps/angular-error-handler/src/main.ts",
+            "polyfills": "apps/angular-error-handler/src/polyfills.ts",
+            "tsConfig": "apps/angular-error-handler/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/angular-error-handler/src/favicon.ico",
+              "apps/angular-error-handler/src/assets"
+            ],
+            "styles": ["apps/angular-error-handler/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/angular-error-handler/src/environments/environment.ts",
+                  "with": "apps/angular-error-handler/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "angular-error-handler:build:production"
+            },
+            "development": {
+              "browserTarget": "angular-error-handler:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "angular-error-handler:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/angular-error-handler/src/**/*.ts",
+              "apps/angular-error-handler/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/angular-error-handler"],
+          "options": {
+            "jestConfig": "apps/angular-error-handler/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "angular-error-handler-e2e": {
+      "root": "apps/angular-error-handler-e2e",
+      "sourceRoot": "apps/angular-error-handler-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/angular-error-handler-e2e/cypress.json",
+            "devServerTarget": "angular-error-handler:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "angular-error-handler:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/angular-error-handler-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
     "angular-lazy-loading": {
       "projectType": "application",
       "root": "apps/angular-lazy-loading",

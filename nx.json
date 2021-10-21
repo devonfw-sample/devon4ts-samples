@@ -34,6 +34,13 @@
       "tags": [],
       "implicitDependencies": ["angular-basic-pwa"]
     },
+    "angular-error-handler": {
+      "tags": []
+    },
+    "angular-error-handler-e2e": {
+      "tags": [],
+      "implicitDependencies": ["angular-error-handler"]
+    },
     "angular-lazy-loading": {
       "tags": []
     },

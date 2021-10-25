@@ -23,6 +23,7 @@
     "@angular/router": "^12.2.0",
     "@angular/service-worker": "^12.2.0",
     "@nrwl/angular": "12.9.0",
+    "my-ng-library": "file:my-ng-library-0.0.1.tgz",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"

@@ -51,6 +51,13 @@
     "angular-library": {
       "tags": []
     },
+    "angular-library-test": {
+      "tags": []
+    },
+    "angular-library-test-e2e": {
+      "tags": [],
+      "implicitDependencies": ["angular-library-test"]
+    },
     "angular-material-basic-layout": {
       "tags": []
     },

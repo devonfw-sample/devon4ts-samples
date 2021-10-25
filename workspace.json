@@ -372,6 +372,47 @@
         }
       }
     },
+    "angular-library": {
+      "projectType": "library",
+      "root": "libs/angular-library",
+      "sourceRoot": "libs/angular-library/src",
+      "prefix": "devon4ts-samples",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "outputs": ["dist/libs/angular-library"],
+          "options": {
+            "project": "libs/angular-library/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/angular-library/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/angular-library/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/angular-library"],
+          "options": {
+            "jestConfig": "libs/angular-library/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/angular-library/src/**/*.ts",
+              "libs/angular-library/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "angular-material-basic-layout": {
       "projectType": "application",
       "root": "apps/angular-material-basic-layout",

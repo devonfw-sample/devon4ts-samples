@@ -48,6 +48,9 @@
       "tags": [],
       "implicitDependencies": ["angular-lazy-loading"]
     },
+    "angular-library": {
+      "tags": []
+    },
     "angular-material-basic-layout": {
       "tags": []
     },

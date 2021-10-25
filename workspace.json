@@ -372,6 +372,176 @@
         }
       }
     },
+    "angular-library": {
+      "projectType": "library",
+      "root": "libs/angular-library",
+      "sourceRoot": "libs/angular-library/src",
+      "prefix": "devon4ts-samples",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "outputs": ["dist/libs/angular-library"],
+          "options": {
+            "project": "libs/angular-library/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/angular-library/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/angular-library/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "pack": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "nx run angular-library:build:production",
+              "cd ./dist/libs/angular-library && npm pack"
+            ],
+            "parallel": false
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/angular-library"],
+          "options": {
+            "jestConfig": "libs/angular-library/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/angular-library/src/**/*.ts",
+              "libs/angular-library/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "angular-library-test": {
+      "projectType": "application",
+      "root": "apps/angular-library-test",
+      "sourceRoot": "apps/angular-library-test/src",
+      "prefix": "devon4ts-samples",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/angular-library-test",
+            "index": "apps/angular-library-test/src/index.html",
+            "main": "apps/angular-library-test/src/main.ts",
+            "polyfills": "apps/angular-library-test/src/polyfills.ts",
+            "tsConfig": "apps/angular-library-test/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/angular-library-test/src/favicon.ico",
+              "apps/angular-library-test/src/assets"
+            ],
+            "styles": ["apps/angular-library-test/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/angular-library-test/src/environments/environment.ts",
+                  "with": "apps/angular-library-test/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "angular-library-test:build:production"
+            },
+            "development": {
+              "browserTarget": "angular-library-test:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "angular-library-test:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/angular-library-test/src/**/*.ts",
+              "apps/angular-library-test/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/angular-library-test"],
+          "options": {
+            "jestConfig": "apps/angular-library-test/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "angular-library-test-e2e": {
+      "root": "apps/angular-library-test-e2e",
+      "sourceRoot": "apps/angular-library-test-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/angular-library-test-e2e/cypress.json",
+            "devServerTarget": "angular-library-test:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "angular-library-test:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/angular-library-test-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
     "angular-material-basic-layout": {
       "projectType": "application",
       "root": "apps/angular-material-basic-layout",

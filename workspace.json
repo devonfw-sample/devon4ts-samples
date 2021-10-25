@@ -394,6 +394,16 @@
           },
           "defaultConfiguration": "production"
         },
+        "pack": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "nx run angular-library:build:production",
+              "cd ./dist/libs/angular-library && npm pack"
+            ],
+            "parallel": false
+          }
+        },
         "test": {
           "builder": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/angular-library"],

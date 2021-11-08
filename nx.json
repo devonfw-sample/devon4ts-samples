@@ -72,6 +72,13 @@
       "tags": [],
       "implicitDependencies": ["angular-material-theming"]
     },
+    "app-initializer": {
+      "tags": []
+    },
+    "app-initializer-e2e": {
+      "tags": [],
+      "implicitDependencies": ["app-initializer"]
+    },
     "shared-components": {
       "tags": []
     }

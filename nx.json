@@ -72,6 +72,13 @@
       "tags": [],
       "implicitDependencies": ["angular-material-theming"]
     },
+    "ionic-basic-pwa": {
+      "tags": []
+    },
+    "ionic-basic-pwa-e2e": {
+      "tags": [],
+      "implicitDependencies": ["ionic-basic-pwa"]
+    },
     "shared-components": {
       "tags": []
     }

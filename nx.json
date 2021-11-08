@@ -72,6 +72,13 @@
       "tags": [],
       "implicitDependencies": ["angular-material-theming"]
     },
+    "cypress-test": {
+      "tags": []
+    },
+    "cypress-test-e2e": {
+      "tags": [],
+      "implicitDependencies": ["cypress-test"]
+    },
     "shared-components": {
       "tags": []
     }

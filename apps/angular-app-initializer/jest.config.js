@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'app-initializer',
+  displayName: 'angular-app-initializer',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -8,7 +8,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../coverage/apps/app-initializer',
+  coverageDirectory: '../../coverage/apps/angular-app-initializer',
   transform: {
     '^.+\\.(ts|js|html)$': 'jest-preset-angular',
   },

@@ -784,27 +784,27 @@
         }
       }
     },
-    "app-initializer": {
+    "angular-app-initializer": {
       "projectType": "application",
-      "root": "apps/app-initializer",
-      "sourceRoot": "apps/app-initializer/src",
+      "root": "apps/angular-app-initializer",
+      "sourceRoot": "apps/angular-app-initializer/src",
       "prefix": "devon4ts-samples",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "outputs": ["{options.outputPath}"],
           "options": {
-            "outputPath": "dist/apps/app-initializer",
-            "index": "apps/app-initializer/src/index.html",
-            "main": "apps/app-initializer/src/main.ts",
-            "polyfills": "apps/app-initializer/src/polyfills.ts",
-            "tsConfig": "apps/app-initializer/tsconfig.app.json",
+            "outputPath": "dist/apps/angular-app-initializer",
+            "index": "apps/angular-app-initializer/src/index.html",
+            "main": "apps/angular-app-initializer/src/main.ts",
+            "polyfills": "apps/angular-app-initializer/src/polyfills.ts",
+            "tsConfig": "apps/angular-app-initializer/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "apps/app-initializer/src/favicon.ico",
-              "apps/app-initializer/src/assets"
+              "apps/angular-app-initializer/src/favicon.ico",
+              "apps/angular-app-initializer/src/assets"
             ],
-            "styles": ["apps/app-initializer/src/styles.scss"],
+            "styles": ["apps/angular-app-initializer/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -823,8 +823,8 @@
               ],
               "fileReplacements": [
                 {
-                  "replace": "apps/app-initializer/src/environments/environment.ts",
-                  "with": "apps/app-initializer/src/environments/environment.prod.ts"
+                  "replace": "apps/angular-app-initializer/src/environments/environment.ts",
+                  "with": "apps/angular-app-initializer/src/environments/environment.prod.ts"
                 }
               ],
               "outputHashing": "all"
@@ -844,10 +844,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "app-initializer:build:production"
+              "browserTarget": "angular-app-initializer:build:production"
             },
             "development": {
-              "browserTarget": "app-initializer:build:development"
+              "browserTarget": "angular-app-initializer:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -855,42 +855,42 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "app-initializer:build"
+            "browserTarget": "angular-app-initializer:build"
           }
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "apps/app-initializer/src/**/*.ts",
-              "apps/app-initializer/src/**/*.html"
+              "apps/angular-app-initializer/src/**/*.ts",
+              "apps/angular-app-initializer/src/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/app-initializer"],
+          "outputs": ["coverage/apps/angular-app-initializer"],
           "options": {
-            "jestConfig": "apps/app-initializer/jest.config.js",
+            "jestConfig": "apps/angular-app-initializer/jest.config.js",
             "passWithNoTests": true
           }
         }
       }
     },
-    "app-initializer-e2e": {
-      "root": "apps/app-initializer-e2e",
-      "sourceRoot": "apps/app-initializer-e2e/src",
+    "angular-app-initializer-e2e": {
+      "root": "apps/angular-app-initializer-e2e",
+      "sourceRoot": "apps/angular-app-initializer-e2e/src",
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@nrwl/cypress:cypress",
           "options": {
-            "cypressConfig": "apps/app-initializer-e2e/cypress.json",
-            "devServerTarget": "app-initializer:serve:development"
+            "cypressConfig": "apps/angular-app-initializer-e2e/cypress.json",
+            "devServerTarget": "angular-app-initializer:serve:development"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "app-initializer:serve:production"
+              "devServerTarget": "angular-app-initializer:serve:production"
             }
           }
         },
@@ -898,7 +898,7 @@
           "builder": "@nrwl/linter:eslint",
           "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": ["apps/app-initializer-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": ["apps/angular-app-initializer-e2e/**/*.{js,ts}"]
           }
         }
       }

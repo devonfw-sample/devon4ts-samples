@@ -1,6 +1,6 @@
 import { getGreeting } from '../support/app.po';
 
-describe('app-initializer', () => {
+describe('angular-app-initializer', () => {
   beforeEach(() => cy.visit('/'));
 
   it('should display welcome message', () => {
@@ -8,6 +8,6 @@ describe('app-initializer', () => {
     cy.login('my-email@something.com', 'myPassword');
 
     // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome to app-initializer!');
+    getGreeting().contains('Welcome to angular-app-initializer!');
   });
 });

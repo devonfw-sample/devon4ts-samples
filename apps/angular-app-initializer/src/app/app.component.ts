@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConfigService } from './core/config/config.service';
 
 @Component({
   selector: 'devon4ts-samples-root',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'app-initializer';
+  title = 'angular-app-initializer';
+
+  constructor(public configService: ConfigService) { }
 }

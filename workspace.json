@@ -134,6 +134,99 @@
         }
       }
     },
+    "angular-cypress-test": {
+      "projectType": "application",
+      "root": "apps/angular-cypress-test",
+      "sourceRoot": "apps/angular-cypress-test/src",
+      "prefix": "devon4ts-samples",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/angular-cypress-test",
+            "index": "apps/angular-cypress-test/src/index.html",
+            "main": "apps/angular-cypress-test/src/main.ts",
+            "polyfills": "apps/angular-cypress-test/src/polyfills.ts",
+            "tsConfig": "apps/angular-cypress-test/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/angular-cypress-test/src/favicon.ico",
+              "apps/angular-cypress-test/src/assets"
+            ],
+            "styles": ["apps/angular-cypress-test/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/angular-cypress-test/src/environments/environment.ts",
+                  "with": "apps/angular-cypress-test/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "angular-cypress-test:build:production"
+            },
+            "development": {
+              "browserTarget": "angular-cypress-test:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "angular-cypress-test:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/angular-cypress-test/src/**/*.ts",
+              "apps/angular-cypress-test/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/angular-cypress-test"],
+          "options": {
+            "jestConfig": "apps/angular-cypress-test/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "angular-error-handler": {
       "projectType": "application",
       "root": "apps/angular-error-handler",
@@ -273,8 +366,13 @@
               "apps/angular-lazy-loading/src/favicon.ico",
               "apps/angular-lazy-loading/src/assets"
             ],
-            "styles": ["apps/angular-lazy-loading/src/styles.scss"],
-            "scripts": []
+            "styles": [
+              "apps/angular-lazy-loading/src/styles.scss",
+              "apps/angular-cypress-test/src/assets/css/devon4tsAngularElements.css"
+            ],
+            "scripts": [
+              "apps/angular-cypress-test/src/assets/js/devon4tsAngularElements.js"
+            ]
           },
           "configurations": {
             "production": {

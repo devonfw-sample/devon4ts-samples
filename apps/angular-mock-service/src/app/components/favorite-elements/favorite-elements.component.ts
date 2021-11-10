@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 //import the data model (interface) for this component
-import { PeriodicElement } from '../models/periodicElement';
+import { PeriodicElement } from '../../models/periodicElement';
 
 //import the service that handles the data model
-import {ChemicalElementsService} from '../services/chemical-elements.service';
+import {ChemicalElementsService} from '../../services/chemical-elements.service';
 
 
 @Component({

@@ -37,10 +37,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
-import { DataTableComponent } from './data-table/data-table.component';
-import { ElementDetailsComponent } from './element-details/element-details.component';
-import { FavoriteElementsComponent } from './favorite-elements/favorite-elements.component';
+import { DataTableComponent } from './components/data-table/data-table.component';
+import { ElementDetailsComponent } from './components/element-details/element-details.component';
+import { FavoriteElementsComponent } from './components/favorite-elements/favorite-elements.component';
 import { DataComponent } from './pages/data/data.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -94,7 +93,6 @@ import { HomeComponent } from './pages/home/home.component';
     MatTooltipModule,
     MatTreeModule,
     AppRoutingModule,
-    RouterModule.forRoot([], { initialNavigation: 'enabledBlocking' })
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -17,7 +17,7 @@ export class ChemicalElementsService {
     return of(ELEMENT_DATA);
   }
 
-  public getElementAtPosition(pos: number): Observable<PeriodicElement> {
+  public getElementAtPosition(pos: number): Observable<any> {
     return of(ELEMENT_DATA.find((element) => element.position === pos));
   }
 

@@ -5,10 +5,10 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 //import the data model (interface) for this component
-import { PeriodicElement } from '../models/periodicElement';
+import { PeriodicElement } from '../../models/periodicElement';
 
 //import the service that handles the data model
-import { ChemicalElementsService } from '../services/chemical-elements.service';
+import { ChemicalElementsService } from '../../services/chemical-elements.service';
 
 @Component({
   selector: 'devon4ts-samples-element-details',
@@ -35,7 +35,7 @@ export class ElementDetailsComponent implements OnInit {
   }
 
   getSelectedElement(): void {
-    const id = this.route.snapshot.paramMap.get('id');
+    const id = '' + this.route.snapshot.paramMap.get('id');
     this.chemicalElementsService.getElementAtPosition(parseInt(id)).subscribe(result => this.element = result);
     // TODO: replce this with the route parameter
   }

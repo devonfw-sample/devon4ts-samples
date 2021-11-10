@@ -5,7 +5,7 @@ import { Plugins, CameraResultType } from '@capacitor/core';
 @Component({
   selector: 'devon4ts-samples-homepage',
   templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.css']
+  styleUrls: ['./homepage.component.scss']
 })
 export class HomePageComponent {
   image: SafeResourceUrl;

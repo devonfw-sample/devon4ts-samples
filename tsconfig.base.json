@@ -17,7 +17,8 @@
     "paths": {
       "@devon4ts-samples/shared-components": [
         "libs/shared-components/src/index.ts"
-      ]
+      ],
+      "my-ng-library": ["libs/angular-library/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

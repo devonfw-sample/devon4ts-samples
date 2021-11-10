@@ -18,7 +18,7 @@ export class HomePageComponent {
 
   async takePicture() {
     try {
-      const image = await camera.getPhoto({
+      const image = await Plugins.camera.getPhoto({
         quality: 90,
         allowEditing: true,
         resultType: CameraResultType.Uri,
@@ -32,7 +32,7 @@ export class HomePageComponent {
   }
 
   async show(message: string) {
-    await toast.show({
+    await Plugins.toast.show({
       text: message,
     });
   }

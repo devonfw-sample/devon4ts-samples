@@ -79,11 +79,24 @@
       "tags": [],
       "implicitDependencies": ["angular-mock-service"]
     },
+    "angular-app-initializer": {
+
+      "tags": []
+
+    },
+    "angular-app-initializer-e2e": {
+
+      "tags": [],
+
+      "implicitDependencies": ["angular-app-initializer"]
+
+    },
     "ionic-basic-pwa": {
 
       "tags": []
 
     },
+
     "ionic-basic-pwa-e2e": {
 
       "tags": [],

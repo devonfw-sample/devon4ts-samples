@@ -34,6 +34,9 @@
       "tags": [],
       "implicitDependencies": ["angular-basic-pwa"]
     },
+    "angular-cypress-test": {
+      "tags": []
+    },
     "angular-error-handler": {
       "tags": []
     },

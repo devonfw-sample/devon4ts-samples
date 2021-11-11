@@ -1025,6 +1025,125 @@
         }
       }
     },
+    "ionic-basic-pwa": {
+      "projectType": "application",
+      "root": "apps/ionic-basic-pwa",
+      "sourceRoot": "apps/ionic-basic-pwa/src",
+      "prefix": "devon4ts-samples",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/ionic-basic-pwa",
+            "index": "apps/ionic-basic-pwa/src/index.html",
+            "main": "apps/ionic-basic-pwa/src/main.ts",
+            "polyfills": "apps/ionic-basic-pwa/src/polyfills.ts",
+            "tsConfig": "apps/ionic-basic-pwa/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/ionic-basic-pwa/src/favicon.ico",
+              "apps/ionic-basic-pwa/src/assets"
+            ],
+            "styles": ["apps/ionic-basic-pwa/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/ionic-basic-pwa/src/environments/environment.ts",
+                  "with": "apps/ionic-basic-pwa/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ionic-basic-pwa:build:production"
+            },
+            "development": {
+              "browserTarget": "ionic-basic-pwa:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ionic-basic-pwa:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/ionic-basic-pwa/src/**/*.ts",
+              "apps/ionic-basic-pwa/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/ionic-basic-pwa"],
+          "options": {
+            "jestConfig": "apps/ionic-basic-pwa/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ionic-basic-pwa-e2e": {
+      "root": "apps/ionic-basic-pwa-e2e",
+      "sourceRoot": "apps/ionic-basic-pwa-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/ionic-basic-pwa-e2e/cypress.json",
+            "devServerTarget": "ionic-basic-pwa:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ionic-basic-pwa:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/ionic-basic-pwa-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
     "shared-components": {
       "projectType": "library",
       "root": "libs/shared-components",

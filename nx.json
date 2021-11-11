@@ -79,6 +79,18 @@
       "tags": [],
       "implicitDependencies": ["angular-mock-service"]
     },
+    "ionic-basic-pwa": {
+
+      "tags": []
+
+    },
+    "ionic-basic-pwa-e2e": {
+
+      "tags": [],
+
+      "implicitDependencies": ["ionic-basic-pwa"]
+
+    },
     "shared-components": {
       "tags": []
     }

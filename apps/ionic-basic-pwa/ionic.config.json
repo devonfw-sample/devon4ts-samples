@@ -1,0 +1,7 @@
+{
+  "name": "basic-ion-pwa",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

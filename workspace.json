@@ -894,6 +894,244 @@
         }
       }
     },
+    "angular-mock-service": {
+      "projectType": "application",
+      "root": "apps/angular-mock-service",
+      "sourceRoot": "apps/angular-mock-service/src",
+      "prefix": "devon4ts-samples",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/angular-mock-service",
+            "index": "apps/angular-mock-service/src/index.html",
+            "main": "apps/angular-mock-service/src/main.ts",
+            "polyfills": "apps/angular-mock-service/src/polyfills.ts",
+            "tsConfig": "apps/angular-mock-service/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/angular-mock-service/src/favicon.ico",
+              "apps/angular-mock-service/src/assets"
+            ],
+            "styles": ["apps/angular-mock-service/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/angular-mock-service/src/environments/environment.ts",
+                  "with": "apps/angular-mock-service/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "angular-mock-service:build:production"
+            },
+            "development": {
+              "browserTarget": "angular-mock-service:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "angular-mock-service:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/angular-mock-service/src/**/*.ts",
+              "apps/angular-mock-service/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/angular-mock-service"],
+          "options": {
+            "jestConfig": "apps/angular-mock-service/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "angular-mock-service-e2e": {
+      "root": "apps/angular-mock-service-e2e",
+      "sourceRoot": "apps/angular-mock-service-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/angular-mock-service-e2e/cypress.json",
+            "devServerTarget": "angular-mock-service:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "angular-mock-service:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/angular-mock-service-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "angular-app-initializer": {
+      "projectType": "application",
+      "root": "apps/angular-app-initializer",
+      "sourceRoot": "apps/angular-app-initializer/src",
+      "prefix": "devon4ts-samples",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/angular-app-initializer",
+            "index": "apps/angular-app-initializer/src/index.html",
+            "main": "apps/angular-app-initializer/src/main.ts",
+            "polyfills": "apps/angular-app-initializer/src/polyfills.ts",
+            "tsConfig": "apps/angular-app-initializer/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/angular-app-initializer/src/favicon.ico",
+              "apps/angular-app-initializer/src/assets"
+            ],
+            "styles": ["apps/angular-app-initializer/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/angular-app-initializer/src/environments/environment.ts",
+                  "with": "apps/angular-app-initializer/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "angular-app-initializer:build:production"
+            },
+            "development": {
+              "browserTarget": "angular-app-initializer:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "angular-app-initializer:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/angular-app-initializer/src/**/*.ts",
+              "apps/angular-app-initializer/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/angular-app-initializer"],
+          "options": {
+            "jestConfig": "apps/angular-app-initializer/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "angular-app-initializer-e2e": {
+      "root": "apps/angular-app-initializer-e2e",
+      "sourceRoot": "apps/angular-app-initializer-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/angular-app-initializer-e2e/cypress.json",
+            "devServerTarget": "angular-app-initializer:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "angular-app-initializer:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/angular-app-initializer-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
     "shared-components": {
       "projectType": "library",
       "root": "libs/shared-components",
@@ -919,37 +1157,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "defaultCollection": "@nrwl/angular",
-    "packageManager": "npm"
-  },
-  "schematics": {
-    "@nrwl/angular": {
-      "application": {
-        "linter": "eslint"
-      },
-      "library": {
-        "linter": "eslint"
-      },
-      "storybook-configuration": {
-        "linter": "eslint"
-      }
-    },
-    "@nrwl/angular:application": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
-    },
-    "@nrwl/angular:library": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "jest"
-    },
-    "@nrwl/angular:component": {
-      "style": "scss"
-    }
-  },
-  "defaultProject": "angular-basic-pwa"
+  }
 }

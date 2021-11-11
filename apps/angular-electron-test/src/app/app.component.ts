@@ -6,9 +6,9 @@ import { Component , OnInit} from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'Devon4ngElectronTest';
+  title = 'Devon4tsElectronTest';
   ngOnInit(): void {
-    this.title = 'Devon4ngElectronTest';
+    this.title = 'Devon4tsElectronTest';
   }
   createComponent(): void {
     const container = document.getElementById('container');

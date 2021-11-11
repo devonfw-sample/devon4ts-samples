@@ -72,12 +72,12 @@
       "tags": [],
       "implicitDependencies": ["angular-material-theming"]
     },
-    "electron-test": {
+    "angular-electron-test": {
       "tags": []
     },
-    "electron-test-e2e": {
+    "angular-electron-test-e2e": {
       "tags": [],
-      "implicitDependencies": ["electron-test"]
+      "implicitDependencies": ["angular-electron-test"]
     },
     "shared-components": {
       "tags": []

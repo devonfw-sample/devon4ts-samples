@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'electron-test',
+  displayName: 'angular-electron-test',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -8,7 +8,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../coverage/apps/electron-test',
+  coverageDirectory: '../../coverage/apps/angular-electron-test',
   transform: {
     '^.+\\.(ts|js|html)$': 'jest-preset-angular',
   },

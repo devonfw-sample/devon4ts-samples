@@ -1,6 +1,6 @@
 import { getGreeting } from '../support/app.po';
 
-describe('electron-test', () => {
+describe('angular-electron-test', () => {
   beforeEach(() => cy.visit('/'));
 
   it('should display welcome message', () => {
@@ -8,6 +8,6 @@ describe('electron-test', () => {
     cy.login('my-email@something.com', 'myPassword');
 
     // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome to electron-test!');
+    getGreeting().contains('Welcome to angular-electron-test!');
   });
 });

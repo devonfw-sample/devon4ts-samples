@@ -154,8 +154,13 @@
               "apps/angular-cypress-test/src/favicon.ico",
               "apps/angular-cypress-test/src/assets"
             ],
-            "styles": ["apps/angular-cypress-test/src/styles.scss"],
-            "scripts": []
+            "styles": [
+              "apps/angular-cypress-test/src/styles.scss",
+              "apps/angular-cypress-test/src/assets/css/devon4tsAngularElements.css"
+            ],
+            "scripts": [
+              "apps/angular-cypress-test/src/assets/js/devon4tsAngularElements.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -222,7 +227,14 @@
           "outputs": ["coverage/apps/angular-cypress-test"],
           "options": {
             "jestConfig": "apps/angular-cypress-test/jest.config.js",
-            "passWithNoTests": true
+            "passWithNoTests": true,
+            "styles": [
+              "apps/angular-cypress-test/src/styles.scss",
+              "apps/angular-cypress-test/src/assets/css/devon4tsAngularElements.css"
+            ],
+            "scripts": [
+              "apps/angular-cypress-test/src/assets/js/devon4tsAngularElements.js"
+            ]
           }
         }
       }

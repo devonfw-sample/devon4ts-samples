@@ -34,6 +34,9 @@
       "tags": [],
       "implicitDependencies": ["angular-basic-pwa"]
     },
+    "angular-cypress-test": {
+      "tags": []
+    },
     "angular-error-handler": {
       "tags": []
     },
@@ -72,6 +75,25 @@
       "tags": [],
       "implicitDependencies": ["angular-material-theming"]
     },
+    "angular-mock-service": {
+      "tags": []
+    },
+    "angular-mock-service-e2e": {
+      "tags": [],
+      "implicitDependencies": ["angular-mock-service"]
+    },
+    "angular-app-initializer": {
+
+      "tags": []
+
+    },
+    "angular-app-initializer-e2e": {
+
+      "tags": [],
+
+      "implicitDependencies": ["angular-app-initializer"]
+
+    },
     "angular-electron-test": {
       "tags": []
     },
@@ -82,5 +104,26 @@
     "shared-components": {
       "tags": []
     }
-  }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular",
+    "packageManager": "npm"
+  },
+  "generators": {
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
+  },
+  "defaultProject": "angular-basic-pwa"
 }

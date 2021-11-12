@@ -94,6 +94,13 @@
       "implicitDependencies": ["angular-app-initializer"]
 
     },
+    "angular-electron-test": {
+      "tags": []
+    },
+    "angular-electron-test-e2e": {
+      "tags": [],
+      "implicitDependencies": ["angular-electron-test"]
+    },
     "shared-components": {
       "tags": []
     }

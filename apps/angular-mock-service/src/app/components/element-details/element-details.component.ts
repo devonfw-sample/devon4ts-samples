@@ -18,7 +18,13 @@ import { ChemicalElementsService } from '../../services/chemical-elements.servic
 })
 export class ElementDetailsComponent implements OnInit {
 
-  element: PeriodicElement = null;
+  element: PeriodicElement = {
+    name: '',
+    position: 0,
+    weight: 0,
+    symbol: '',
+    description: '',
+  };
 
   constructor(
     private route: ActivatedRoute,
@@ -30,8 +36,8 @@ export class ElementDetailsComponent implements OnInit {
   }
 
   getSelectedElement(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.chemicalElementsService.getElementAtPosition(id).subscribe(result => this.element = result);
+    const id = '' + this.route.snapshot.paramMap.get('id');
+    this.chemicalElementsService.getElementAtPosition(parseInt(id)).subscribe(result => this.element = result);
     // TODO: replce this with the route parameter
   }
 

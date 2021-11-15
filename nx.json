@@ -72,6 +72,13 @@
       "tags": [],
       "implicitDependencies": ["angular-material-theming"]
     },
+    "angular-mock-service": {
+      "tags": []
+    },
+    "angular-mock-service-e2e": {
+      "tags": [],
+      "implicitDependencies": ["angular-mock-service"]
+    },
     "shared-components": {
       "tags": []
     }

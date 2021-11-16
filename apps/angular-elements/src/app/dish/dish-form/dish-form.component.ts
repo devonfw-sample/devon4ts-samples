@@ -8,10 +8,9 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./dish-form.component.scss']
 })
 export class DishFormComponent implements OnInit {
+  @Input() platename: any;
 
-  @Input() platename;
-
-  @Input() platedescription;
+  @Input() platedescription: any;
 
   @Output()
   submitDishEvent = new EventEmitter();
@@ -35,5 +34,4 @@ export class DishFormComponent implements OnInit {
     );
     this.submitDishEvent.emit('dishSubmited');
   }
-
 }

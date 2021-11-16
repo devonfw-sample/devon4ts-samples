@@ -5,13 +5,16 @@ import { Injectable } from '@angular/core';
 })
 export class DishShareService {
 
-  name;
-  description;
+  name: any;
+  description: any;
 
   constructor() {}
 
-  createDish(name, description): void {
+  createDish(name: any, description: any): void {
     this.name = name;
     this.description = description;
   }
 }
+
+
+

@@ -8,8 +8,8 @@ import { DishShareService } from '../shared/dish-share.service';
 })
 export class DishViewComponent implements OnInit {
 
-  dishname;
-  dishdescription;
+  dishname: any;
+  dishdescription: any;
 
   constructor(public dishShareService: DishShareService) {}
 

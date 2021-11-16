@@ -268,7 +268,7 @@
       "prefix": "devon4ts-samples",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "ngx-build-plus:browser",
           "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/angular-elements",
@@ -281,7 +281,7 @@
               "apps/angular-elements/src/favicon.ico",
               "apps/angular-elements/src/assets"
             ],
-            "styles": ["apps/angular-elements/src/styles.scss"],
+            "styles": ["apps/angular-elements/src/styles.scss", "apps/angular-elements/src/theme.scss"],
             "scripts": []
           },
           "configurations": {

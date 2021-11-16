@@ -1,107 +1,72 @@
 {
   "npmScope": "devon4ts-samples",
-  "affected": {
-    "defaultBase": "master"
-  },
+  "affected": { "defaultBase": "master" },
   "implicitDependencies": {
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     ".eslintrc.json": "*"
   },
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
+      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
   "targetDependencies": {
-    "build": [
-      {
-        "target": "build",
-        "projects": "dependencies"
-      }
-    ]
+    "build": [{ "target": "build", "projects": "dependencies" }]
   },
   "projects": {
-    "angular-app-initializer": {
-      "tags": []
-    },
+    "angular-app-initializer": { "tags": [] },
     "angular-app-initializer-e2e": {
       "tags": [],
       "implicitDependencies": ["angular-app-initializer"]
     },
-    "angular-basic-pwa": {
-      "tags": []
-    },
+    "angular-basic-pwa": { "tags": [] },
     "angular-basic-pwa-e2e": {
       "tags": [],
       "implicitDependencies": ["angular-basic-pwa"]
     },
-    "angular-elements": {
-      "tags": []
-    },
+    "angular-elements": { "tags": [] },
     "angular-elements-e2e": {
       "tags": [],
       "implicitDependencies": ["angular-elements"]
     },
-    "angular-elements-test": {
-      "tags": []
-    },
+    "angular-elements-test": { "tags": [] },
     "angular-elements-test-e2e": {
       "tags": [],
       "implicitDependencies": ["angular-elements-test"]
     },
-    "angular-error-handler": {
-      "tags": []
-    },
+    "angular-error-handler": { "tags": [] },
     "angular-error-handler-e2e": {
       "tags": [],
       "implicitDependencies": ["angular-error-handler"]
     },
-    "angular-lazy-loading": {
-      "tags": []
-    },
+    "angular-lazy-loading": { "tags": [] },
     "angular-lazy-loading-e2e": {
       "tags": [],
       "implicitDependencies": ["angular-lazy-loading"]
     },
-    "angular-library": {
-      "tags": []
-    },
-    "angular-library-test": {
-      "tags": []
-    },
+    "angular-library": { "tags": [] },
+    "angular-library-test": { "tags": [] },
     "angular-library-test-e2e": {
       "tags": [],
       "implicitDependencies": ["angular-library-test"]
     },
-    "angular-material-basic-layout": {
-      "tags": []
-    },
+    "angular-material-basic-layout": { "tags": [] },
     "angular-material-basic-layout-e2e": {
       "tags": [],
       "implicitDependencies": ["angular-material-basic-layout"]
     },
-    "angular-material-theming": {
-      "tags": []
-    },
+    "angular-material-theming": { "tags": [] },
     "angular-material-theming-e2e": {
       "tags": [],
       "implicitDependencies": ["angular-material-theming"]
     },
-    "angular-mock-service": {
-      "tags": []
-    },
+    "angular-mock-service": { "tags": [] },
     "angular-mock-service-e2e": {
       "tags": [],
       "implicitDependencies": ["angular-mock-service"]
     },
-    "shared-components": {
-      "tags": []
-    }
+    "shared-components": { "tags": [] },
+    "angular-electron-test": { "tags": [] }
   }
 }

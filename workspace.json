@@ -9,7 +9,9 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/angular-app-initializer",
             "index": "apps/angular-app-initializer/src/index.html",
@@ -22,7 +24,9 @@
               "apps/angular-app-initializer/src/assets",
               "apps/angular-app-initializer/src/external-config.json"
             ],
-            "styles": ["apps/angular-app-initializer/src/styles.scss"],
+            "styles": [
+              "apps/angular-app-initializer/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -87,7 +91,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/angular-app-initializer"],
+          "outputs": [
+            "coverage/apps/angular-app-initializer"
+          ],
           "options": {
             "jestConfig": "apps/angular-app-initializer/jest.config.js",
             "passWithNoTests": true,
@@ -119,7 +125,9 @@
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
+          "outputs": [
+            "{options.outputFile}"
+          ],
           "options": {
             "lintFilePatterns": [
               "apps/angular-app-initializer-e2e/**/*.{js,ts}"
@@ -136,7 +144,9 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/angular-basic-pwa",
             "index": "apps/angular-basic-pwa/src/index.html",
@@ -149,7 +159,9 @@
               "apps/angular-basic-pwa/src/assets",
               "apps/angular-basic-pwa/src/manifest.webmanifest"
             ],
-            "styles": ["apps/angular-basic-pwa/src/styles.scss"],
+            "styles": [
+              "apps/angular-basic-pwa/src/styles.scss"
+            ],
             "scripts": [],
             "serviceWorker": true,
             "ngswConfigPath": "apps/angular-basic-pwa/ngsw-config.json"
@@ -226,7 +238,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/angular-basic-pwa"],
+          "outputs": [
+            "coverage/apps/angular-basic-pwa"
+          ],
           "options": {
             "jestConfig": "apps/angular-basic-pwa/jest.config.js",
             "passWithNoTests": true
@@ -254,9 +268,13 @@
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
+          "outputs": [
+            "{options.outputFile}"
+          ],
           "options": {
-            "lintFilePatterns": ["apps/angular-basic-pwa-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/angular-basic-pwa-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -269,7 +287,9 @@
       "architect": {
         "build": {
           "builder": "ngx-build-plus:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/angular-elements",
             "index": "apps/angular-elements/src/index.html",
@@ -349,7 +369,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/angular-elements"],
+          "outputs": [
+            "coverage/apps/angular-elements"
+          ],
           "options": {
             "jestConfig": "apps/angular-elements/jest.config.js",
             "passWithNoTests": true
@@ -376,9 +398,13 @@
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
+          "outputs": [
+            "{options.outputFile}"
+          ],
           "options": {
-            "lintFilePatterns": ["apps/angular-elements-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/angular-elements-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -391,7 +417,9 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/angular-elements-test",
             "index": "apps/angular-elements-test/src/index.html",
@@ -404,9 +432,12 @@
               "apps/angular-elements-test/src/assets"
             ],
             "styles": [
-                "apps/angular-elements-test/src/styles.scss",
-                "apps/angular-elements-test/src/assets/css/devon4tsAngularElements.css"],
-            "scripts": ["apps/angular-elements-test/src/assets/js/devon4tsAngularElements.js"]
+              "apps/angular-elements-test/src/styles.scss",
+              "apps/angular-elements-test/src/assets/css/devon4tsAngularElements.css"
+            ],
+            "scripts": [
+              "apps/angular-elements-test/src/assets/js/devon4tsAngularElements.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -470,14 +501,19 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/angular-elements-test"],
+          "outputs": [
+            "coverage/apps/angular-elements-test"
+          ],
           "options": {
             "jestConfig": "apps/angular-elements-test/jest.config.js",
             "passWithNoTests": true,
             "styles": [
               "apps/angular-elements-test/src/styles.scss",
-              "apps/angular-elements-test/src/assets/css/devon4tsAngularElements.css"],
-            "scripts": ["apps/angular-elements-test/src/assets/js/devon4tsAngularElements.js"]
+              "apps/angular-elements-test/src/assets/css/devon4tsAngularElements.css"
+            ],
+            "scripts": [
+              "apps/angular-elements-test/src/assets/js/devon4tsAngularElements.js"
+            ]
           }
         }
       }
@@ -501,9 +537,13 @@
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
+          "outputs": [
+            "{options.outputFile}"
+          ],
           "options": {
-            "lintFilePatterns": ["apps/angular-elements-test-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/angular-elements-test-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -516,7 +556,9 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/angular-error-handler",
             "index": "apps/angular-error-handler/src/index.html",
@@ -528,7 +570,9 @@
               "apps/angular-error-handler/src/favicon.ico",
               "apps/angular-error-handler/src/assets"
             ],
-            "styles": ["apps/angular-error-handler/src/styles.scss"],
+            "styles": [
+              "apps/angular-error-handler/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -593,7 +637,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/angular-error-handler"],
+          "outputs": [
+            "coverage/apps/angular-error-handler"
+          ],
           "options": {
             "jestConfig": "apps/angular-error-handler/jest.config.js",
             "passWithNoTests": true
@@ -620,9 +666,13 @@
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
+          "outputs": [
+            "{options.outputFile}"
+          ],
           "options": {
-            "lintFilePatterns": ["apps/angular-error-handler-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/angular-error-handler-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -635,7 +685,9 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/angular-lazy-loading",
             "index": "apps/angular-lazy-loading/src/index.html",
@@ -647,7 +699,9 @@
               "apps/angular-lazy-loading/src/favicon.ico",
               "apps/angular-lazy-loading/src/assets"
             ],
-            "styles": ["apps/angular-lazy-loading/src/styles.scss"],
+            "styles": [
+              "apps/angular-lazy-loading/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -712,7 +766,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/angular-lazy-loading"],
+          "outputs": [
+            "coverage/apps/angular-lazy-loading"
+          ],
           "options": {
             "jestConfig": "apps/angular-lazy-loading/jest.config.js",
             "passWithNoTests": true
@@ -739,9 +795,13 @@
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
+          "outputs": [
+            "{options.outputFile}"
+          ],
           "options": {
-            "lintFilePatterns": ["apps/angular-lazy-loading-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/angular-lazy-loading-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -754,7 +814,9 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
-          "outputs": ["dist/libs/angular-library"],
+          "outputs": [
+            "dist/libs/angular-library"
+          ],
           "options": {
             "project": "libs/angular-library/ng-package.json"
           },
@@ -780,7 +842,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/angular-library"],
+          "outputs": [
+            "coverage/libs/angular-library"
+          ],
           "options": {
             "jestConfig": "libs/angular-library/jest.config.js",
             "passWithNoTests": true
@@ -805,7 +869,9 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/angular-library-test",
             "index": "apps/angular-library-test/src/index.html",
@@ -817,7 +883,9 @@
               "apps/angular-library-test/src/favicon.ico",
               "apps/angular-library-test/src/assets"
             ],
-            "styles": ["apps/angular-library-test/src/styles.scss"],
+            "styles": [
+              "apps/angular-library-test/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -882,7 +950,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/angular-library-test"],
+          "outputs": [
+            "coverage/apps/angular-library-test"
+          ],
           "options": {
             "jestConfig": "apps/angular-library-test/jest.config.js",
             "passWithNoTests": true
@@ -909,9 +979,13 @@
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
+          "outputs": [
+            "{options.outputFile}"
+          ],
           "options": {
-            "lintFilePatterns": ["apps/angular-library-test-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/angular-library-test-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -924,7 +998,9 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/angular-material-basic-layout",
             "index": "apps/angular-material-basic-layout/src/index.html",
@@ -936,7 +1012,9 @@
               "apps/angular-material-basic-layout/src/favicon.ico",
               "apps/angular-material-basic-layout/src/assets"
             ],
-            "styles": ["apps/angular-material-basic-layout/src/styles.scss"],
+            "styles": [
+              "apps/angular-material-basic-layout/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -1001,7 +1079,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/angular-material-basic-layout"],
+          "outputs": [
+            "coverage/apps/angular-material-basic-layout"
+          ],
           "options": {
             "jestConfig": "apps/angular-material-basic-layout/jest.config.js",
             "passWithNoTests": true
@@ -1028,7 +1108,9 @@
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
+          "outputs": [
+            "{options.outputFile}"
+          ],
           "options": {
             "lintFilePatterns": [
               "apps/angular-material-basic-layout-e2e/**/*.{js,ts}"
@@ -1045,7 +1127,9 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/angular-material-theming",
             "index": "apps/angular-material-theming/src/index.html",
@@ -1057,7 +1141,9 @@
               "apps/angular-material-theming/src/favicon.ico",
               "apps/angular-material-theming/src/assets"
             ],
-            "styles": ["apps/angular-material-theming/src/styles.scss"],
+            "styles": [
+              "apps/angular-material-theming/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -1122,7 +1208,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/angular-material-theming"],
+          "outputs": [
+            "coverage/apps/angular-material-theming"
+          ],
           "options": {
             "jestConfig": "apps/angular-material-theming/jest.config.js",
             "passWithNoTests": true
@@ -1149,7 +1237,9 @@
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
+          "outputs": [
+            "{options.outputFile}"
+          ],
           "options": {
             "lintFilePatterns": [
               "apps/angular-material-theming-e2e/**/*.{js,ts}"
@@ -1166,7 +1256,9 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/angular-mock-service",
             "index": "apps/angular-mock-service/src/index.html",
@@ -1178,7 +1270,9 @@
               "apps/angular-mock-service/src/favicon.ico",
               "apps/angular-mock-service/src/assets"
             ],
-            "styles": ["apps/angular-mock-service/src/styles.scss"],
+            "styles": [
+              "apps/angular-mock-service/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -1243,7 +1337,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/angular-mock-service"],
+          "outputs": [
+            "coverage/apps/angular-mock-service"
+          ],
           "options": {
             "jestConfig": "apps/angular-mock-service/jest.config.js",
             "passWithNoTests": true
@@ -1270,9 +1366,13 @@
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
+          "outputs": [
+            "{options.outputFile}"
+          ],
           "options": {
-            "lintFilePatterns": ["apps/angular-mock-service-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/angular-mock-service-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -1285,7 +1385,9 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared-components"],
+          "outputs": [
+            "coverage/libs/shared-components"
+          ],
           "options": {
             "jestConfig": "libs/shared-components/jest.config.js",
             "passWithNoTests": true
@@ -1298,6 +1400,79 @@
               "libs/shared-components/src/**/*.ts",
               "libs/shared-components/src/**/*.html"
             ]
+          }
+        }
+      }
+    },
+    "angular-electron-test": {
+      "root": "apps/angular-electron-test",
+      "sourceRoot": "apps/angular-electron-test/src",
+      "projectType": "application",
+      "prefix": "angular-electron-test",
+      "architect": {
+        "build": {
+          "builder": "nx-electron:build",
+          "options": {
+            "outputPath": "dist/apps/angular-electron-test",
+            "main": "apps/angular-electron-test/src/main.ts",
+            "tsConfig": "apps/angular-electron-test/tsconfig.app.json",
+            "assets": [
+              "apps/angular-electron-test/src/assets"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/angular-electron-test/src/environments/environment.ts",
+                  "with": "apps/angular-electron-test/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "nx-electron:execute",
+          "options": {
+            "buildTarget": "angular-electron-test:build"
+          }
+        },
+        "package": {
+          "builder": "nx-electron:package",
+          "options": {
+            "name": "angular-electron-test",
+            "frontendProject": "angular-elements-test",
+            "outputPath": "dist/packages",
+            "prepackageOnly": true
+          }
+        },
+        "make": {
+          "builder": "nx-electron:make",
+          "options": {
+            "name": "angular-electron-test",
+            "frontendProject": "angular-elements-test",
+            "outputPath": "dist/executables"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/angular-electron-test/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/angular-electron-test"
+          ],
+          "options": {
+            "jestConfig": "apps/angular-electron-test/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }

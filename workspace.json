@@ -261,6 +261,253 @@
         }
       }
     },
+    "angular-elements": {
+      "projectType": "application",
+      "root": "apps/angular-elements",
+      "sourceRoot": "apps/angular-elements/src",
+      "prefix": "devon4ts-samples",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/angular-elements",
+            "index": "apps/angular-elements/src/index.html",
+            "main": "apps/angular-elements/src/main.ts",
+            "polyfills": "apps/angular-elements/src/polyfills.ts",
+            "tsConfig": "apps/angular-elements/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/angular-elements/src/favicon.ico",
+              "apps/angular-elements/src/assets"
+            ],
+            "styles": [
+              "apps/angular-elements/src/styles.scss",
+              "apps/angular-elements/src/theme.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/angular-elements/src/environments/environment.ts",
+                  "with": "apps/angular-elements/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "angular-elements:build:production"
+            },
+            "development": {
+              "browserTarget": "angular-elements:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "angular-elements:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/angular-elements/src/**/*.ts",
+              "apps/angular-elements/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/angular-elements"],
+          "options": {
+            "jestConfig": "apps/angular-elements/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "angular-elements-e2e": {
+      "root": "apps/angular-elements-e2e",
+      "sourceRoot": "apps/angular-elements-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/angular-elements-e2e/cypress.json",
+            "devServerTarget": "angular-elements:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "angular-elements:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/angular-elements-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "angular-elements-test": {
+      "projectType": "application",
+      "root": "apps/angular-elements-test",
+      "sourceRoot": "apps/angular-elements-test/src",
+      "prefix": "devon4ts-samples",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/angular-elements-test",
+            "index": "apps/angular-elements-test/src/index.html",
+            "main": "apps/angular-elements-test/src/main.ts",
+            "polyfills": "apps/angular-elements-test/src/polyfills.ts",
+            "tsConfig": "apps/angular-elements-test/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/angular-elements-test/src/favicon.ico",
+              "apps/angular-elements-test/src/assets"
+            ],
+            "styles": [
+                "apps/angular-elements-test/src/styles.scss",
+                "apps/angular-elements-test/src/assets/css/devon4tsAngularElements.css"],
+            "scripts": ["apps/angular-elements-test/src/assets/js/devon4tsAngularElements.js"]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/angular-elements-test/src/environments/environment.ts",
+                  "with": "apps/angular-elements-test/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "angular-elements-test:build:production"
+            },
+            "development": {
+              "browserTarget": "angular-elements-test:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "angular-elements-test:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/angular-elements-test/src/**/*.ts",
+              "apps/angular-elements-test/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/angular-elements-test"],
+          "options": {
+            "jestConfig": "apps/angular-elements-test/jest.config.js",
+            "passWithNoTests": true,
+            "styles": [
+              "apps/angular-elements-test/src/styles.scss",
+              "apps/angular-elements-test/src/assets/css/devon4tsAngularElements.css"],
+            "scripts": ["apps/angular-elements-test/src/assets/js/devon4tsAngularElements.js"]
+          }
+        }
+      }
+    },
+    "angular-elements-test-e2e": {
+      "root": "apps/angular-elements-test-e2e",
+      "sourceRoot": "apps/angular-elements-test-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/angular-elements-test-e2e/cypress.json",
+            "devServerTarget": "angular-elements-test:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "angular-elements-test:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/angular-elements-test-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
     "angular-error-handler": {
       "projectType": "application",
       "root": "apps/angular-error-handler",

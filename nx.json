@@ -48,6 +48,13 @@
       "tags": [],
       "implicitDependencies": ["angular-elements"]
     },
+    "angular-elements-test": {
+      "tags": []
+    },
+    "angular-elements-test-e2e": {
+      "tags": [],
+      "implicitDependencies": ["angular-elements-test"]
+    },
     "angular-error-handler": {
       "tags": []
     },

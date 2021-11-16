@@ -11,6 +11,6 @@ export class AppComponent {
   createComponent(): void {
     const container = document.getElementById('container');
     const component = document.createElement('dish-form');
-    container.appendChild(component);
+    container?.appendChild(component);
   }
 }

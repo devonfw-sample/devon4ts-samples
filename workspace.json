@@ -279,6 +279,79 @@
         }
       }
     },
+    "angular-electron-test": {
+      "root": "apps/angular-electron-test",
+      "sourceRoot": "apps/angular-electron-test/src",
+      "projectType": "application",
+      "prefix": "angular-electron-test",
+      "architect": {
+        "build": {
+          "builder": "nx-electron:build",
+          "options": {
+            "outputPath": "dist/apps/angular-electron-test",
+            "main": "apps/angular-electron-test/src/main.ts",
+            "tsConfig": "apps/angular-electron-test/tsconfig.app.json",
+            "assets": [
+              "apps/angular-electron-test/src/assets"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/angular-electron-test/src/environments/environment.ts",
+                  "with": "apps/angular-electron-test/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "nx-electron:execute",
+          "options": {
+            "buildTarget": "angular-electron-test:build"
+          }
+        },
+        "package": {
+          "builder": "nx-electron:package",
+          "options": {
+            "name": "angular-electron-test",
+            "frontendProject": "angular-elements-test",
+            "outputPath": "dist/packages",
+            "prepackageOnly": true
+          }
+        },
+        "make": {
+          "builder": "nx-electron:make",
+          "options": {
+            "name": "angular-electron-test",
+            "frontendProject": "angular-elements-test",
+            "outputPath": "dist/executables"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/angular-electron-test/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/angular-electron-test"
+          ],
+          "options": {
+            "jestConfig": "apps/angular-electron-test/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "angular-elements": {
       "projectType": "application",
       "root": "apps/angular-elements",
@@ -1377,6 +1450,223 @@
         }
       }
     },
+    "ionic-basic-pwa": {
+      "projectType": "application",
+      "root": "apps/ionic-basic-pwa",
+      "sourceRoot": "apps/ionic-basic-pwa/src",
+      "prefix": "devon4ts-samples",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/apps/ionic-basic-pwa",
+            "index": "apps/ionic-basic-pwa/src/index.html",
+            "main": "apps/ionic-basic-pwa/src/main.ts",
+            "polyfills": "apps/ionic-basic-pwa/src/polyfills.ts",
+            "tsConfig": "apps/ionic-basic-pwa/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/ionic-basic-pwa/src/assets",
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/ionicons/dist/ionicons/svg",
+                "output": "./svg"
+              }
+            ],
+            "styles": [
+              "apps/ionic-basic-pwa/src/styles.scss",
+              {
+                "input": "apps\\ionic-basic-pwa/src/theme/variables.scss"
+              }
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/ionic-basic-pwa/src/environments/environment.ts",
+                  "with": "apps/ionic-basic-pwa/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ionic-basic-pwa:build:production"
+            },
+            "development": {
+              "browserTarget": "ionic-basic-pwa:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ionic-basic-pwa:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/ionic-basic-pwa/src/**/*.ts",
+              "apps/ionic-basic-pwa/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/ionic-basic-pwa"
+          ],
+          "options": {
+            "jestConfig": "apps/ionic-basic-pwa/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "cap": {
+          "builder": "@nxtend/capacitor:cap",
+          "options": {
+            "cmd": "--help"
+          }
+        },
+        "add": {
+          "builder": "@nxtend/capacitor:cap",
+          "options": {
+            "cmd": "add",
+            "packageInstall": true
+          },
+          "configurations": {
+            "ios": {
+              "cmd": "add ios"
+            },
+            "android": {
+              "cmd": "add android"
+            }
+          }
+        },
+        "copy": {
+          "builder": "@nxtend/capacitor:cap",
+          "options": {
+            "cmd": "copy",
+            "packageInstall": false
+          },
+          "configurations": {
+            "ios": {
+              "cmd": "copy ios"
+            },
+            "android": {
+              "cmd": "copy android"
+            }
+          }
+        },
+        "open": {
+          "builder": "@nxtend/capacitor:cap",
+          "options": {
+            "cmd": "open",
+            "packageInstall": false
+          },
+          "configurations": {
+            "ios": {
+              "cmd": "open ios"
+            },
+            "android": {
+              "cmd": "open android"
+            }
+          }
+        },
+        "sync": {
+          "builder": "@nxtend/capacitor:cap",
+          "options": {
+            "cmd": "sync",
+            "packageInstall": true
+          },
+          "configurations": {
+            "ios": {
+              "cmd": "sync ios"
+            },
+            "android": {
+              "cmd": "sync android"
+            }
+          }
+        },
+        "update": {
+          "builder": "@nxtend/capacitor:cap",
+          "options": {
+            "cmd": "update",
+            "packageInstall": true
+          },
+          "configurations": {
+            "ios": {
+              "cmd": "update ios"
+            },
+            "android": {
+              "cmd": "update android"
+            }
+          }
+        }
+      }
+    },
+    "ionic-basic-pwa-e2e": {
+      "root": "apps/ionic-basic-pwa-e2e",
+      "sourceRoot": "apps/ionic-basic-pwa-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/ionic-basic-pwa-e2e/cypress.json",
+            "devServerTarget": "ionic-basic-pwa:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ionic-basic-pwa:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": [
+            "{options.outputFile}"
+          ],
+          "options": {
+            "lintFilePatterns": [
+              "apps/ionic-basic-pwa-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    },
     "shared-components": {
       "projectType": "library",
       "root": "libs/shared-components",
@@ -1400,79 +1690,6 @@
               "libs/shared-components/src/**/*.ts",
               "libs/shared-components/src/**/*.html"
             ]
-          }
-        }
-      }
-    },
-    "angular-electron-test": {
-      "root": "apps/angular-electron-test",
-      "sourceRoot": "apps/angular-electron-test/src",
-      "projectType": "application",
-      "prefix": "angular-electron-test",
-      "architect": {
-        "build": {
-          "builder": "nx-electron:build",
-          "options": {
-            "outputPath": "dist/apps/angular-electron-test",
-            "main": "apps/angular-electron-test/src/main.ts",
-            "tsConfig": "apps/angular-electron-test/tsconfig.app.json",
-            "assets": [
-              "apps/angular-electron-test/src/assets"
-            ]
-          },
-          "configurations": {
-            "production": {
-              "optimization": true,
-              "extractLicenses": true,
-              "inspect": false,
-              "fileReplacements": [
-                {
-                  "replace": "apps/angular-electron-test/src/environments/environment.ts",
-                  "with": "apps/angular-electron-test/src/environments/environment.prod.ts"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "nx-electron:execute",
-          "options": {
-            "buildTarget": "angular-electron-test:build"
-          }
-        },
-        "package": {
-          "builder": "nx-electron:package",
-          "options": {
-            "name": "angular-electron-test",
-            "frontendProject": "angular-elements-test",
-            "outputPath": "dist/packages",
-            "prepackageOnly": true
-          }
-        },
-        "make": {
-          "builder": "nx-electron:make",
-          "options": {
-            "name": "angular-electron-test",
-            "frontendProject": "angular-elements-test",
-            "outputPath": "dist/executables"
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "apps/angular-electron-test/**/*.ts"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/angular-electron-test"
-          ],
-          "options": {
-            "jestConfig": "apps/angular-electron-test/jest.config.js",
-            "passWithNoTests": true
           }
         }
       }

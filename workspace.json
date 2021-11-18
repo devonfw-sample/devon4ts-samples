@@ -1507,7 +1507,7 @@
               ],
               "outputHashing": "all",
               "serviceWorker": true,
-              "ngswConfigPath": "ngsw-config.json"
+              "ngswConfigPath": "apps/ionic-basic-pwa/ngsw-config.json"
             },
             "development": {
               "buildOptimizer": false,

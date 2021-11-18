@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Plugins, CameraResultType } from '@capacitor/core';
 
-const { camera, toast } = Plugins;
 
 @Component({
   selector: 'devon4ts-samples-home',
@@ -20,7 +19,7 @@ export class HomePage {
 
   async takePicture() {
     try {
-      const image = await camera.getPhoto({
+      const image = await Plugins.camera.getPhoto({
         quality: 90,
         allowEditing: true,
         resultType: CameraResultType.Uri,
@@ -34,7 +33,7 @@ export class HomePage {
   }
 
   async show(message: string) {
-    await toast.show({
+    await Plugins.toast.show({
       text: message,
     });
   }

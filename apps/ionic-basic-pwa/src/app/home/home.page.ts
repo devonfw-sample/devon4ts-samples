@@ -19,21 +19,24 @@ export class HomePage {
 
   async takePicture() {
     try {
-      const image = await Plugins.camera.getPhoto({
+      const image = await Plugins.Camera.getPhoto({
         quality: 90,
         allowEditing: true,
         resultType: CameraResultType.Uri,
       });
 
       // Change last picture shown
-      this.image = this.sanitizer.bypassSecurityTrustResourceUrl(image.webPath);
+      if(image.webPath){
+        this.image = this.sanitizer.bypassSecurityTrustResourceUrl(image.webPath);
+      }
+      
     } catch (e) {
       this.show('Closing camera');
     }
   }
 
   async show(message: string) {
-    await Plugins.toast.show({
+    await Plugins.Toast.show({
       text: message,
     });
   }

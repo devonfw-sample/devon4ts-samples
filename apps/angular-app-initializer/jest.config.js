@@ -9,16 +9,10 @@ module.exports = {
     },
   },
   coverageDirectory: '../../coverage/apps/angular-app-initializer',
+  coverageReporters: ['json', 'lcov', 'html'],
   transform: {
     '^.+.(ts|mjs|js|html)$': 'jest-preset-angular',
   },
-  transformIgnorePatterns: ['node_modules/(?!.*.mjs$)'],
-  transformIgnorePatterns: ['node_modules/(?!.*.mjs$)'],
-  transformIgnorePatterns: ['node_modules/(?!.*.mjs$)'],
-  transformIgnorePatterns: ['node_modules/(?!.*.mjs$)'],
-  transformIgnorePatterns: ['node_modules/(?!.*.mjs$)'],
-  transformIgnorePatterns: ['node_modules/(?!.*.mjs$)'],
-  transformIgnorePatterns: ['node_modules/(?!.*.mjs$)'],
   transformIgnorePatterns: ['node_modules/(?!.*.mjs$)'],
   snapshotSerializers: [
     'jest-preset-angular/build/serializers/no-ng-attributes',

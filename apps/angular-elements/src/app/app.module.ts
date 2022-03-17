@@ -7,13 +7,12 @@ import { DishViewComponent } from './dish/dish-view/dish-view.component';
 import { DishShareService } from './dish/shared/dish-share.service';
 
 @NgModule({
-  declarations: [DishFormComponent, DishViewComponent],
-  imports: [
-    CoreModule, // Module containing Angular Materials
-    FormsModule,
-  ],
-  entryComponents: [DishFormComponent, DishViewComponent],
-  providers: [DishShareService],
+    declarations: [DishFormComponent, DishViewComponent],
+    imports: [
+        CoreModule,
+        FormsModule,
+    ],
+    providers: [DishShareService]
 })
 export class AppModule implements DoBootstrap {
   constructor(private injector: Injector) {}

@@ -104,7 +104,8 @@
             ]
           }
         }
-      }
+      },
+      "tags": []
     },
     "angular-app-initializer-e2e": {
       "root": "apps/angular-app-initializer-e2e",
@@ -134,7 +135,11 @@
             ]
           }
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": [
+        "angular-app-initializer"
+      ]
     },
     "angular-basic-pwa": {
       "projectType": "application",
@@ -246,7 +251,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "angular-basic-pwa-e2e": {
       "root": "apps/angular-basic-pwa-e2e",
@@ -277,7 +283,11 @@
             ]
           }
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": [
+        "angular-basic-pwa"
+      ]
     },
     "angular-electron-test": {
       "root": "apps/angular-electron-test",
@@ -350,7 +360,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "angular-elements": {
       "projectType": "application",
@@ -450,7 +461,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "angular-elements-e2e": {
       "root": "apps/angular-elements-e2e",
@@ -480,7 +492,11 @@
             ]
           }
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": [
+        "angular-elements"
+      ]
     },
     "angular-elements-test": {
       "projectType": "application",
@@ -589,7 +605,8 @@
             ]
           }
         }
-      }
+      },
+      "tags": []
     },
     "angular-elements-test-e2e": {
       "root": "apps/angular-elements-test-e2e",
@@ -619,7 +636,11 @@
             ]
           }
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": [
+        "angular-elements-test"
+      ]
     },
     "angular-error-handler": {
       "projectType": "application",
@@ -718,7 +739,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "angular-error-handler-e2e": {
       "root": "apps/angular-error-handler-e2e",
@@ -748,7 +770,11 @@
             ]
           }
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": [
+        "angular-error-handler"
+      ]
     },
     "angular-lazy-loading": {
       "projectType": "application",
@@ -847,7 +873,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "angular-lazy-loading-e2e": {
       "root": "apps/angular-lazy-loading-e2e",
@@ -877,7 +904,11 @@
             ]
           }
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": [
+        "angular-lazy-loading"
+      ]
     },
     "angular-library": {
       "projectType": "library",
@@ -932,7 +963,8 @@
             ]
           }
         }
-      }
+      },
+      "tags": []
     },
     "angular-library-test": {
       "projectType": "application",
@@ -1031,7 +1063,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "angular-library-test-e2e": {
       "root": "apps/angular-library-test-e2e",
@@ -1061,7 +1094,11 @@
             ]
           }
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": [
+        "angular-library-test"
+      ]
     },
     "angular-material-basic-layout": {
       "projectType": "application",
@@ -1160,7 +1197,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "angular-material-basic-layout-e2e": {
       "root": "apps/angular-material-basic-layout-e2e",
@@ -1190,7 +1228,11 @@
             ]
           }
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": [
+        "angular-material-basic-layout"
+      ]
     },
     "angular-material-theming": {
       "projectType": "application",
@@ -1289,7 +1331,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "angular-material-theming-e2e": {
       "root": "apps/angular-material-theming-e2e",
@@ -1319,7 +1362,11 @@
             ]
           }
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": [
+        "angular-material-theming"
+      ]
     },
     "angular-mock-service": {
       "projectType": "application",
@@ -1418,7 +1465,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "angular-mock-service-e2e": {
       "root": "apps/angular-mock-service-e2e",
@@ -1448,7 +1496,11 @@
             ]
           }
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": [
+        "angular-mock-service"
+      ]
     },
     "ionic-basic-pwa": {
       "projectType": "application",
@@ -1638,7 +1690,8 @@
             }
           }
         }
-      }
+      },
+      "tags": []
     },
     "ionic-basic-pwa-e2e": {
       "root": "apps/ionic-basic-pwa-e2e",
@@ -1668,7 +1721,11 @@
             ]
           }
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": [
+        "ionic-basic-pwa"
+      ]
     },
     "shared-components": {
       "projectType": "library",
@@ -1695,39 +1752,8 @@
             ]
           }
         }
-      }
-    }
-  },
-  "cli": {
-    "defaultCollection": "@nrwl/angular",
-    "packageManager": "npm"
-  },
-  "schematics": {
-    "@nrwl/angular": {
-      "application": {
-        "linter": "eslint"
       },
-      "library": {
-        "linter": "eslint"
-      },
-      "storybook-configuration": {
-        "linter": "eslint"
-      }
-    },
-    "@nrwl/angular:application": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
-    },
-    "@nrwl/angular:library": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "jest"
-    },
-    "@nrwl/angular:component": {
-      "style": "scss"
+      "tags": []
     }
-  },
-  "defaultProject": "angular-basic-pwa"
+  }
 }

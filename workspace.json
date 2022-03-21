@@ -1532,7 +1532,7 @@
             "styles": [
               "apps/ionic-basic-pwa/src/styles.scss",
               {
-                "input": "apps\\ionic-basic-pwa/src/theme/variables.scss"
+                "input": "apps/ionic-basic-pwa/src/theme/variables.scss"
               }
             ],
             "scripts": []

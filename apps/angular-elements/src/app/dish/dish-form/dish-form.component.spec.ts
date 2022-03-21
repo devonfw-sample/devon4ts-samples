@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule } from '@angular/forms';
 import { DishFormComponent } from './dish-form.component';
 
 describe('DishFormComponent', () => {
@@ -8,9 +8,9 @@ describe('DishFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DishFormComponent ]
-    })
-    .compileComponents();
+      imports: [FormsModule],
+      declarations: [DishFormComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

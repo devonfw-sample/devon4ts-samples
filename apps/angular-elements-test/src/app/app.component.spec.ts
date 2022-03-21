@@ -17,7 +17,7 @@ describe('AppComponent', () => {
   it(`should have as title 'angular-elements-test'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular-elements-test');
+    expect(app.title).toEqual('Devon4tsAngularElementsTest');
   });
 
   it('should render title', () => {
@@ -25,7 +25,7 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Welcome to angular-elements-test!'
+      'Welcome to Devon4tsAngularElementsTest!'
     );
   });
 });

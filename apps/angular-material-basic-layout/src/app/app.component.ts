@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Pages } from 'libs/shared-components/src/lib/basic-layout/basic-layout.model';
+import { Pages } from '@devon4ts-samples/shared-components';
 
 @Component({
   selector: 'devon4ts-samples-root',

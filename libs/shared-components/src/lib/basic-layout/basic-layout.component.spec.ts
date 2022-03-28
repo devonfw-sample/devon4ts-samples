@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MatMenuModule } from '@angular/material/menu';
 import { BasicLayoutComponent } from './basic-layout.component';
 
 describe('BasicLayoutComponent', () => {
@@ -8,9 +8,9 @@ describe('BasicLayoutComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BasicLayoutComponent ]
-    })
-    .compileComponents();
+      imports: [MatMenuModule],
+      declarations: [BasicLayoutComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
